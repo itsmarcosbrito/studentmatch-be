@@ -3,7 +3,7 @@ const router = new express.Router();
 const routeGuard = require('./../middleware/route-guard');
 
 router.get('/', (req, res, next) => {
-  res.json({ type: 'success', data: { title: 'Hello World' } });
+  res.json({ type: 'fail', data: { title: 'Login Error' } });
 });
 
 router.get('/user-profile', (req, res, next) => {

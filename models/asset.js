@@ -14,7 +14,7 @@ const schema = new mongoose.Schema({
     type: String
   },
   owner: {
-    type: Schema.Types.UserId,
+    type: Schema.Types.ObjectId,
     ref: 'User',
     required: true
   },
@@ -22,6 +22,4 @@ const schema = new mongoose.Schema({
 
 
 module.exports = mongoose.model('Asset', schema);
-
-
 

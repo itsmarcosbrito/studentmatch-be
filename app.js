@@ -12,6 +12,7 @@ const passportConfigure = require('./passport-configuration.js');
 const baseRouter = require('./routes/index');
 const authenticationRouter = require('./routes/authentication');
 const cors = require('cors');
+const exchange = require('./models/exchange.js');
 
 const app = express();
 
@@ -48,7 +49,8 @@ app.use(bindUserToViewLocals);
 
 app.use('/', authenticationRouter);
 app.use('/', baseRouter);
-
+app.use('/', require('./routes/exchange-routes')); 
+app.use('/', require('./routes/asset-routes')); 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {
   next(createError(404));
