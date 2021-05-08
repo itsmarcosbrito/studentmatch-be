@@ -21,7 +21,7 @@ app.use(logger('dev'));
 app.use(
   cors({
     credentials: true,
-    origin: ['http://localhost:3000']
+    origin: (process.env.ALLOWEDCORSORIGINS || '').split(','),
   })
 );
 app.use(express.json());
