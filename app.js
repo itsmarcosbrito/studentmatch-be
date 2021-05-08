@@ -21,7 +21,7 @@ app.use(logger('dev'));
 app.use(
   cors({
     credentials: true,
-    origin: (process.env.ALLOWEDCORSORIGINS || '').split(','),
+    origin: [process.env.ALLOWEDCORSORIGINS],
   })
 );
 app.use(express.json());
